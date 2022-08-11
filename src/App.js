@@ -6,7 +6,9 @@ import './App.css';
 function App(props) {
   function updateCity(response) {
     alert(`
-    The weather in ${response.data.name} is ${response.data.main.temp}`);
+    The weather in ${response.data.name} is ${Math.round(
+      response.data.main.temp
+    )}`);
   }
 
   let apiKey = 'e4078cf116e415a86a523b0d99dfe1fa';
