@@ -20,7 +20,7 @@ function App(props) {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Hello Dayna!</h1>
+        <h1>The Patterson's!</h1>
         <img
           src="https://scontent-man2-1.xx.fbcdn.net/v/t39.30808-6/296431907_10158699114851722_6656014881858699908_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=730e14&_nc_ohc=mKl9RUAkQTsAX8Wt7JF&_nc_oc=AQnREHCyv4379Cicmr47ZoQOw_Dm39gRJr7LdOTf_HIejPLVhgbxVHcilXalwJp9qoQ&_nc_ht=scontent-man2-1.xx&oh=00_AT9KPHEJep5qWcu_Fd5Oj6YmzqS928Q3rtmdk5mrvgAwQg&oe=62F7FB2E"
           className="App-logo"
