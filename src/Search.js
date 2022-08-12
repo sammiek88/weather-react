@@ -2,15 +2,26 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 export default function Search() {
+  const [loaded, setLoaded] = useState(false);
   const [city, setCity] = useState('');
-  const [temp, setTemp] = useState('');
+  const [weather, setWeather] = useState('');
+
+  let form = (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="search"
+        placeholder="Enter a city..."
+        onChange={updateCity}
+      ></input>
+      <input type="submit" value="Search"></input>
+    </form>
+  );
 
   function handleSubmit(event) {
     let apiKey = '094780c710fa4efd669f0df8c3991927';
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
     event.preventDefault();
-
     axios.get(apiUrl).then(displayWeather);
   }
 
@@ -19,21 +30,32 @@ export default function Search() {
   }
 
   function displayWeather(response) {
-    setTemp(response.data.main.temp);
+    setLoaded(true);
+    setWeather({
+      temp: response.data.main.temp,
+      wind: response.data.wind.speed,
+      humidity: response.data.main.humidity,
+      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      description: response.data.weather[0].description,
+    });
   }
 
-  return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="search"
-          placeholder="Enter a city..."
-          onChange={updateCity}
-        ></input>
-        <input type="submit" value="Search"></input>
-      </form>
-
-      <h2>{temp}</h2>
-    </div>
-  );
+  if (loaded) {
+    return (
+      <div>
+        {form}
+        <ul className="forcast">
+          <li>Temperature: {Math.round(weather.temp)}</li>
+          <li>Wind: {Math.round(weather.wind)}</li>
+          <li>Humidity: {weather.humidity}</li>
+          <li>{weather.description.toUpperCase()}</li>
+          <li>
+            <img alt="weathericon" src={weather.icon} />
+          </li>
+        </ul>
+      </div>
+    );
+  } else {
+    return form;
+  }
 }
