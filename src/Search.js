@@ -32,19 +32,25 @@ export default function Search() {
   }
 
   let form = (
-    <form onSubmit={handleSubmit}>
-      <input
-        className="search mt-5 "
-        type="search"
-        placeholder="Enter a city..."
-        onChange={updateCity}
-        autoFocus="on"
-      ></input>
-      <input
-        type="submit"
-        value="Search"
-        className="search-button m-1 btn btn-primary"
-      ></input>
+    <form className="form-inline" onSubmit={handleSubmit}>
+      <div className="row mt-5">
+        <div className="col-9">
+          <input
+            className="search "
+            type="search"
+            placeholder="Enter a city..."
+            onChange={updateCity}
+            autoFocus="on"
+          />
+        </div>
+        <div className="col-3">
+          <input
+            type="submit"
+            value="Search"
+            className="search-button btn btn-primary"
+          />
+        </div>
+      </div>
     </form>
   );
 
