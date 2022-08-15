@@ -2,10 +2,22 @@ import React from 'react';
 
 export default function gitHub() {
   return (
-    <div>
-      <a href="https://github.com/sammiek88" target="_blank" rel="noreferrer">
-        Find me on GitHub
+    <footer>
+      This project was coded by{' '}
+      <a
+        href="https://modest-kirch-16da8d.netlify.app/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Samantha Kenyon {''}
       </a>
-    </div>
+      <a
+        href="https://github.com/sammiek88/weather-react"
+        target="_blank"
+        rel="noreferrer"
+      >
+        and is opensourced on GitHub
+      </a>
+    </footer>
   );
 }
