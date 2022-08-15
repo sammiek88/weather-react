@@ -35,6 +35,7 @@ export default function Search() {
         type="search"
         placeholder="Enter a city..."
         onChange={updateCity}
+        autoFocus="on"
       ></input>
       <input type="submit" value="Search" class="btn btn-primary"></input>
     </form>
