@@ -5,10 +5,10 @@ import Search from './Search';
 import './App.css';
 
 export default function App() {
-  return <h1>Weather App</h1>;
+  return (
+    <div className="container">
+      <Search />
+      <GitHubLink />
+    </div>
+  );
 }
-
-<div>
-  <Search />
-  <GitHubLink />;
-</div>;

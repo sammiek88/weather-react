@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+import './Search.css';
+
 export default function Search() {
   const [loaded, setLoaded] = useState(false);
   const [city, setCity] = useState('');
@@ -32,12 +34,17 @@ export default function Search() {
   let form = (
     <form onSubmit={handleSubmit}>
       <input
+        className="search mt-5 "
         type="search"
         placeholder="Enter a city..."
         onChange={updateCity}
         autoFocus="on"
       ></input>
-      <input type="submit" value="Search" class="btn btn-primary"></input>
+      <input
+        type="submit"
+        value="Search"
+        className="search-button m-1 btn btn-primary"
+      ></input>
     </form>
   );
 
