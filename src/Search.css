@@ -1,1 +1,12 @@
+.search {
+  width: 100%;
+}
 
+.search-button {
+  width: 100%;
+}
+
+.forcast {
+  list-style: none;
+  color: aliceblue;
+}
