@@ -9,6 +9,7 @@ export default function Search() {
   const [weather, setWeather] = useState({});
 
   function displayWeather(response) {
+    console.log(response);
     setLoaded(true);
     setWeather({
       temp: response.data.main.temp,
@@ -16,6 +17,7 @@ export default function Search() {
       humidity: response.data.main.humidity,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description,
+      feelsLike: response.data.main.feels_like,
     });
   }
 
@@ -59,13 +61,35 @@ export default function Search() {
       <div className="results">
         {form}
         <ul className="forcast">
-          <li>Temperature: {Math.round(weather.temp)}°C</li>
+          <li>
+            <h2 className="cityTitle mt-3">{city}</h2>
+          </li>
+          <div className="row">
+            <div className="col-2">
+              <li>
+                <img alt="weathericon" src={weather.icon} />
+              </li>
+            </div>
+            <div className=" temperature col-4 mt-4">
+              <div>
+                <span className="tempValue">{Math.round(weather.temp)}</span>
+                <span>
+                  {' '}
+                  <a href="/">°C </a>
+                </span>
+                |{' '}
+                <span>
+                  {' '}
+                  <a href="/">°F </a>{' '}
+                </span>
+              </div>
+            </div>
+          </div>
+          <h4>{weather.description.toUpperCase()}</h4>
+          <br />
           <li>Wind: {Math.round(weather.wind)}km/h</li>
           <li>Humidity: {weather.humidity}%</li>
-          <li>{weather.description.toUpperCase()}</li>
-          <li>
-            <img alt="weathericon" src={weather.icon} />
-          </li>
+          <li>Feels Like: {Math.round(weather.feelsLike)}°C</li>
         </ul>
       </div>
     );

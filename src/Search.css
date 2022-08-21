@@ -10,3 +10,7 @@
   list-style: none;
   color: aliceblue;
 }
+
+.tempValue {
+  font-size: 275%;
+}
