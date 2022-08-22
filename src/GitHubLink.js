@@ -4,7 +4,7 @@ import './GitHubLink.css';
 
 export default function gitHub() {
   return (
-    <footer className="footer mt-5">
+    <footer className="footer mt-4 p-1">
       This project was coded by{' '}
       <a
         href="https://modest-kirch-16da8d.netlify.app/"

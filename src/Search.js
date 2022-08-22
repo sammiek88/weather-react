@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import axios from 'axios';
 
 import './Search.css';
@@ -9,7 +10,6 @@ export default function Search() {
   const [weather, setWeather] = useState({});
 
   function displayWeather(response) {
-    console.log(response);
     setLoaded(true);
     setWeather({
       temp: response.data.main.temp,
@@ -38,7 +38,7 @@ export default function Search() {
       <div className=" row mt-5">
         <div className="col-9">
           <input
-            className="search p-1 mt-4"
+            className="search p-1 "
             type="search"
             placeholder="Enter a city..."
             onChange={updateCity}
@@ -49,7 +49,7 @@ export default function Search() {
           <input
             type="submit"
             value="Search"
-            className="search-button btn btn-primary p-1 mt-4"
+            className="search-button btn btn-primary p-1 "
           />
         </div>
       </div>
@@ -87,7 +87,7 @@ export default function Search() {
           </div>
           <h4>{weather.description.toUpperCase()}</h4>
           <br />
-          <li>Wind: {Math.round(weather.wind)}km/h</li>
+          <li>Wind: {Math.round(weather.wind)} km/h</li>
           <li>Humidity: {weather.humidity}%</li>
           <li>Feels Like: {Math.round(weather.feelsLike)}°C</li>
         </ul>
