@@ -41,7 +41,7 @@ export default function Search() {
       <div className=" row mt-5">
         <div className="col-9">
           <input
-            className="search p-1 "
+            className="search p-1 mt-3 "
             type="search"
             placeholder="Enter a city..."
             onChange={updateCity}
@@ -52,7 +52,7 @@ export default function Search() {
           <input
             type="submit"
             value="Search"
-            className="search-button btn btn-primary p-1 "
+            className="search-button btn btn-primary p-1 mt-3"
           />
         </div>
       </div>

@@ -26,7 +26,7 @@ export default function Units(props) {
           |{' '}
           <span>
             {' '}
-            <a href="/" onClick={convertToFahrenheit()}>
+            <a href="/" onClick={convertToFahrenheit}>
               °F{' '}
             </a>{' '}
           </span>
@@ -43,7 +43,7 @@ export default function Units(props) {
           {' '}
           <span>
             {' '}
-            <a href="/" onClick={convertToCelsius()}>
+            <a href="/" onClick={convertToCelsius}>
               °C{' '}
             </a>
           </span>
