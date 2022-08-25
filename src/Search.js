@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import CurrentDate from './CurrentDate';
+import Units from './Units';
 
 import axios from 'axios';
 
@@ -74,24 +75,20 @@ export default function Search() {
             </div>
             <div className=" temperature col-4 mt-4">
               <div>
-                <span className="tempValue">{Math.round(weather.temp)}</span>
-                <span>
-                  {' '}
-                  <a href="/">°C </a>
-                </span>
-                |{' '}
-                <span>
-                  {' '}
-                  <a href="/">°F </a>{' '}
-                </span>
+                <Units celsius={weather.temp} />
               </div>
             </div>
           </div>
-          <h4>{weather.description.toUpperCase()}</h4>
-          <br />
-          <li>
-            <CurrentDate date={weather.date} />
-          </li>
+          <div className="row">
+            <div className="col-6">
+              <h4>{weather.description.toUpperCase()}</h4>
+            </div>
+            <div className="col-6">
+              <li>
+                <CurrentDate date={weather.date} />
+              </li>
+            </div>
+          </div>
           <li>Wind: {Math.round(weather.wind)} km/h</li>
           <li>Humidity: {weather.humidity}%</li>
           <li>Feels Like: {Math.round(weather.feelsLike)}°C</li>
