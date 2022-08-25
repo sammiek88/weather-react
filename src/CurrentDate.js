@@ -2,6 +2,26 @@ import React from 'react';
 
 import './CurrentDate.css';
 
-export default function () {
-  return <div className="currentDate mt-5 p-1">Monday 22nd August</div>;
+export default function CurrentDate(props) {
+  console.log(props.date);
+  let days = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+  ];
+  let day = days[props.date.getDay()];
+  let hours = props.date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+
+    let minutes = props.date.getMinutes();
+    if (minutes < 10) {
+      minutes = `0${minutes}`;
+    }
+  }
+  return <div>{day}</div>;
 }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CurrentDate from './CurrentDate';
 
 import axios from 'axios';
 
@@ -12,6 +13,7 @@ export default function Search() {
   function displayWeather(response) {
     setLoaded(true);
     setWeather({
+      date: new Date(response.data.dt * 1000),
       temp: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
@@ -87,6 +89,9 @@ export default function Search() {
           </div>
           <h4>{weather.description.toUpperCase()}</h4>
           <br />
+          <li>
+            <CurrentDate date={weather.date} />
+          </li>
           <li>Wind: {Math.round(weather.wind)} km/h</li>
           <li>Humidity: {weather.humidity}%</li>
           <li>Feels Like: {Math.round(weather.feelsLike)}°C</li>
