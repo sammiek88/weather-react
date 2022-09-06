@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import CurrentDate from './CurrentDate';
 import Units from './Units';
+import Forecast from './Forecast';
 
 import axios from 'axios';
 
@@ -48,6 +49,7 @@ export default function Search() {
             autoFocus="on"
           />
         </div>
+
         <div className="col-2">
           <input
             type="submit"
@@ -63,6 +65,7 @@ export default function Search() {
     return (
       <div className="results">
         {form}
+
         <ul className="forcast">
           <li>
             <h2 className="cityTitle mt-3">{city}</h2>
@@ -93,6 +96,7 @@ export default function Search() {
           <li>Humidity: {weather.humidity}%</li>
           <li>Feels Like: {Math.round(weather.feelsLike)}°C</li>
         </ul>
+        <Forecast />
       </div>
     );
   } else {
