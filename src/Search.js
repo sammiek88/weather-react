@@ -70,6 +70,11 @@ export default function Search() {
           <li>
             <h2 className="cityTitle mt-3">{city}</h2>
           </li>
+          <div className="col-6">
+            <li>
+              <CurrentDate date={weather.date} />
+            </li>
+          </div>
           <div className="row">
             <div className="col-2">
               <li>
@@ -81,20 +86,17 @@ export default function Search() {
                 <Units celsius={weather.temp} />
               </div>
             </div>
+            <div className="col-4">
+              <li>Wind: {Math.round(weather.wind)} km/h</li>
+              <li>Humidity: {weather.humidity}%</li>
+              <li>Feels Like: {Math.round(weather.feelsLike)}°C</li>
+            </div>
           </div>
           <div className="row">
             <div className="col-6">
               <h4>{weather.description.toUpperCase()}</h4>
             </div>
-            <div className="col-6">
-              <li>
-                <CurrentDate date={weather.date} />
-              </li>
-            </div>
           </div>
-          <li>Wind: {Math.round(weather.wind)} km/h</li>
-          <li>Humidity: {weather.humidity}%</li>
-          <li>Feels Like: {Math.round(weather.feelsLike)}°C</li>
         </ul>
         <Forecast />
       </div>
