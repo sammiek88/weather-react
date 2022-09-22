@@ -15,6 +15,7 @@ export default function Search() {
   function displayWeather(response) {
     setLoaded(true);
     setWeather({
+      coordinates: response.data.coord,
       date: new Date(response.data.dt * 1000),
       temp: response.data.main.temp,
       wind: response.data.wind.speed,
@@ -98,7 +99,7 @@ export default function Search() {
             </div>
           </div>
         </ul>
-        <Forecast />
+        <Forecast coordinates={weather.coordinates} />
       </div>
     );
   } else {
