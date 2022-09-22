@@ -6,6 +6,8 @@ export default function (props) {
   let lon = props.coordinates.lon;
   let lat = props.coordinates.lat;
 
+  console.log(lat);
+
   return (
     <div className="ForecastTable p-2">
       <div class="container text-center">
